@@ -1,0 +1,127 @@
+@include media-breakpoint-down(sm) {
+}
+
+@include media-breakpoint-down(lg) {
+  .nav {
+    &.nav--white {
+      .nav__menu {
+        &__items {
+          --cl-border: var(--cl-body-text);
+        }
+
+        .submenu {
+          background-color: var(--cl-body);
+
+          a,
+          i,
+          div {
+            color: var(--cl-body-text);
+          }
+        }
+      }
+    }
+
+    &__submenu__back {
+      margin-bottom: 1em;
+    }
+
+    &__menu {
+      &__items {
+        --cl-border: var(--cl-body-20);
+        position: fixed;
+        top: 0;
+        left: 50%;
+        height: 0;
+        width: 100%;
+        display: block;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: var(--space-container);
+        padding-left: var(--space-container);
+        pointer-events: none;
+        transform: translate3d(-50%, 0, 0);
+        @include transition(all);
+        background-color: var(--cl-dark);
+
+        li a {
+          font-size: 2rem;
+        }
+      }
+
+      li {
+        padding: 1.3rem 0;
+        border-bottom: 0.2rem solid var(--cl-border);
+
+        &.active-submenu {
+          & > .submenu {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+
+      .btn--primary {
+        width: 100%;
+        margin-top: var(--space-small);
+      }
+
+      .submenu {
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        overflow-y: auto;
+        left: 0;
+        transform: translate3d(100%, 0, 0);
+        width: 100%;
+        padding-right: var(--space-container);
+        padding-left: var(--space-container);
+        opacity: 1;
+        background-color: var(--cl-dark);
+        pointer-events: all;
+        @include transition(all);
+
+        li a {
+          font-size: 1.9rem;
+        }
+      }
+    }
+  }
+
+  .menu-is-open {
+    .nav {
+      &__menu {
+        &__items {
+          pointer-events: all;
+          padding-top: 10em;
+          padding-bottom: 3em;
+          height: 100%;
+        }
+
+        .submenu {
+          padding-top: 8em;
+          padding-bottom: 3em;
+        }
+      }
+    }
+
+    #toggle-menu {
+      .btn__icon span {
+        &:last-child {
+          transform: translate3d(-50%, -50%, 0) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:first-child {
+          transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

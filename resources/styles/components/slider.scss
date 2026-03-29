@@ -1,0 +1,141 @@
+.slider--logos {
+  .swiper {
+    width: calc(100% + 20px);
+    transform: translate3d(-10px, 0, 0);
+    overflow: visible;
+
+    .swiper-slide {
+      max-height: 10em;
+      height: auto;
+      aspect-ratio: 1.6 / 1;
+      width: 60%;
+      max-width: 13em;
+
+      @include media-breakpoint-up(md) {
+        aspect-ratio: 1.6 / 1.1;
+      }
+
+      img {
+        width: 70%;
+        max-height: 54%;
+        max-width: 60%;
+        object-fit: contain;
+      }
+    }
+  }
+  .heading.text {
+    text-align: center;
+  }
+
+  .bg-dark.slider--logos .swiper .swiper-slide {
+    background-color: var(--cl-body) !important;
+  }
+}
+
+.slider--team {
+  .swiper {
+    width: 100%;
+    overflow: visible;
+
+    &-wrapper {
+      width: 100%;
+    }
+
+    &-slide {
+      width: 91.6666666667%;
+      height: auto;
+
+      @include media-breakpoint-up(sm) {
+        width: 40%;
+      }
+
+      @include media-breakpoint-up(md) {
+        width: 60%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 45%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 39%;
+      }
+    }
+  }
+  .slider__nav .bg-yellow {
+    background-color: var(--cl-btn-primary);
+  }
+
+  .slider__nav .btn-icon i {
+    color: var(--cl-dark);
+  }
+}
+
+.slider--gallery {
+  .swiper {
+    overflow: visible;
+
+    .swiper-slide {
+      width: auto;
+      img {
+        width: auto;
+        height: 200px;
+        @include media-breakpoint-up(sm) {
+          height: 300px;
+        }
+
+        @include media-breakpoint-up(md) {
+          height: 400px;
+        }
+
+        @include media-breakpoint-up(lg) {
+          height: 500px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+
+.slider__nav {
+  button {
+    opacity: 1;
+    @include transition(opacity);
+
+    &:disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .slider--logos {
+    a.swiper-slide:hover {
+      img {
+        filter: grayscale(0%) !important;
+      }
+    }
+  }
+}
+
+.swiper-pagination {
+  gap: 0.3em;
+}
+
+.swiper-pagination-bullet {
+  width: 0.7em;
+  height: 0.7em;
+  background-color: transparent;
+  border: 2px solid var(--cl-body-text);
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  display: block;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--cl-body-text);
+}

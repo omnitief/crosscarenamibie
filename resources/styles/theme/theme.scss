@@ -1,0 +1,32 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  margin: 0;
+  background-color: var(--cl-body);
+
+  &.error404 {
+    padding-top: var(--nav-height);
+
+    section {
+      margin-top: 0;
+    }
+  }
+}
+  
+.iframe {
+  padding-bottom: calc(var(--radius) * 0.5);
+  iframe {
+    width: 100vw;
+    height: 75vh;
+    border: none
+  }
+}

@@ -1,0 +1,71 @@
+.card-bg {
+  --padding: 1.4em;
+  --multiplier: 1.4;
+  width: 100%;
+  padding-bottom: 135%;
+
+  @include media-breakpoint-up(md) {
+    --multiplier: 1.1;
+    --padding: 2em;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --padding: 1.8em;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    --padding: 2.8em;
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(9, 13, 30, 0),
+      rgba(9, 13, 30, 0.6) 
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__hover,
+  &__content {
+    left: var(--padding);
+    right: var(--padding);
+  }
+
+  &__content {
+    bottom: calc(var(--padding) * var(--multiplier));
+    @include transition(transform);
+  }
+
+  &__hover {
+    bottom: 1.8em;
+    opacity: 0;
+    transform: translate3d(0, calc(var(--padding) + 100%), 0);
+    @include transition(all);
+  }
+}
+
+@media (hover: hover) {
+  .card-bg:hover {
+    .card-bg {
+      &__content {
+        transform: translate3d(0, -2.8em, 0);
+
+        @include media-breakpoint-up(xxl) {
+          transform: translate3d(0, -1.4em, 0);
+        }
+      }
+
+      &__hover {
+        opacity: 1;
+        transform: translate3d(0, -0.3em, 0);
+      }
+    }
+  }
+}

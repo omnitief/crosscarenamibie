@@ -1,0 +1,130 @@
+.text-image {
+  &--no-extra-img {
+    .text-image {
+      &__inner {
+        @include media-breakpoint-down(md) {
+          display: flex;
+          flex-flow: column-reverse;
+        }
+      }
+
+      &__text {
+        &:only-child {
+          padding-top: var(--space-large);
+
+          @include media-breakpoint-up(lg) {
+            padding-bottom: var(--space-large);
+          }
+        }
+
+        &:not(:only-child) {
+          @include media-breakpoint-up(lg) {
+            padding-top: var(--space-small);
+            padding-bottom: var(--space-small);
+          }
+        }
+      }
+    }
+  }
+
+  &--extra-img {
+    .container {
+      margin-bottom: 0 !important;
+    }
+
+    .text-image__text {
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &__image {
+    &--large {
+      padding-bottom: 85%;
+
+      &.right {
+        right: 0;
+
+        @include media-breakpoint-down(md) {
+          left: var(--space-container);
+        }
+      }
+
+      &.left {
+        left: 0;
+
+        @include media-breakpoint-down(md) {
+          width: calc(100% - var(--space-container));
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        bottom: 0;
+        width: 44%;
+        height: 70%;
+        padding-bottom: 0;
+
+        &.h-100 {
+          height: 100%;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 80%;
+
+        &.w-49 {
+          width: 49%;
+        }
+      }
+    }
+
+    &--contain {
+      margin-top: var(--space-small);
+
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      @include media-breakpoint-down(md) {
+        &.img-covered {
+          padding-bottom: 120%;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        @include media-breakpoint-up(lg) {
+          position: absolute;
+        }
+      }
+    }
+
+    &--extra {
+      width: 100%;
+      aspect-ratio: 16/13;
+      object-fit: cover;
+      height: auto;
+    }
+  }
+
+  .col-12 {
+    @include media-breakpoint-up(lg) {
+      &.pt {
+        padding-top: var(--space-small);
+      }
+
+      &.pb {
+        padding-bottom: calc(var(--space-medium) * 2);
+      }
+    }
+  }
+}

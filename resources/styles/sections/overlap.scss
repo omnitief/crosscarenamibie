@@ -1,0 +1,8 @@
+.overlap {
+  width: 100%;
+  height: var(--space-medium);
+
+  &.bottom {
+    bottom: 0;
+  }
+}

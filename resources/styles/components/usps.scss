@@ -1,0 +1,9 @@
+.usp {
+    .btn-icon {
+        --size: 1.6em;
+        background-color: var(--cl-accent-40);
+        * {
+            color: var(--cl-accent);
+        }
+    }
+}

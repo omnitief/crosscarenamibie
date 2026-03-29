@@ -1,0 +1,39 @@
+.pagination {
+  &__button {
+    flex: 1;
+
+    @include media-breakpoint-up(md) {
+      flex: 0.14;
+    }
+  }
+
+  .page-numbers {
+    @include transition(all, 0.3s);
+
+    &:not(.current):not(.prevnext) {
+      opacity: 0.6;
+    }
+
+    &--dots {
+      width: 1em !important;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .bg-dark {
+    background-color: var(--cl-btn-secondary);
+    color: var(--cl-btn-secondary-text-ball);
+  }
+
+}
+
+@media (hover: hover) {
+  .page-numbers:hover {
+    &:not(.current) {
+      opacity: 1;
+    }
+  }
+}

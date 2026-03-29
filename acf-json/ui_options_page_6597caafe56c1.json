@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_6597caafe56c1",
+    "title": "Stijl",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Stijl",
+    "menu_slug": "stijl",
+    "parent_slug": "site-instellingen",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": false,
+    "description": "",
+    "update_button": "Updaten",
+    "updated_message": "Opties bijgewerkt",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "_parent": 338,
+    "modified": 1704446668
+}

@@ -1,0 +1,16 @@
+.slider {
+  &__text {
+    @include media-breakpoint-up(md) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 100vw;
+        height: 120%;
+        transform: translate3d(var(--space-grid), -50%, 0);
+        z-index: -1;
+      }
+    }
+  }
+}

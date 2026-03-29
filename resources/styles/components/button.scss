@@ -1,0 +1,212 @@
+button {
+  border: none;
+  cursor: pointer;
+}
+
+
+.btn {
+  text-decoration: none;
+  line-height: 1.2;
+  font-family: var(--font-primary);
+
+  &--toggle {
+    padding: 0.55em 0.9em;
+  }
+
+  &--primary {
+    padding: 0.94em 3.6em 0.94em 1.3em;
+    border-radius: var(--radius-btn);
+    @include transition(padding);
+
+    .btn-icon {
+      right: 0.7em;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      @include transition(all);
+
+      &:first-child {
+        left: 0.7em;
+        right: auto;
+        transform: translate3d(calc(-105% - 0.7em), -50%, 0);
+      }
+    }
+  }
+
+  &.style {
+    &-primary {
+      background-color: var(--cl-btn-primary);
+      color: var(--cl-btn-primary-text-ball);
+
+      .btn-icon {
+        background-color: var(--cl-btn-primary-text-ball);
+
+        i {
+          color: var(--cl-btn-primary-arrow);
+        }
+      }
+    }
+
+    &-secondary {
+      background-color: var(--cl-btn-secondary);
+      color: var(--cl-btn-secondary-text-ball);
+
+      .btn-icon {
+        background-color: var(--cl-btn-secondary-text-ball);
+
+        i {
+          color: var(--cl-btn-secondary-arrow);
+        }
+      }
+    }
+
+    &-tertiary {
+      background-color: var(--cl-btn-tertiary);
+      color: var(--cl-btn-tertiary-text-ball);
+
+      .btn-icon {
+        background-color: var(--cl-btn-tertiary-text-ball);
+
+        i {
+          color: var(--cl-btn-tertiary-arrow);
+        }
+      }
+    }
+  }
+
+  &.back {
+    padding: 0.7em 1.1em 0.7em 3em;
+
+    .btn-icon {
+      &:first-child {
+        opacity: 1;
+        left: 0.45em;
+        right: auto;
+        transform: translate3d(0, -50%, 0) scale3d(-1, 1, 1);
+      }
+
+      &:last-child {
+        right: 0.45em;
+        opacity: 0;
+        transform: translate3d(80%, -50%, 0) scale3d(-0.7, 0.7, 1);
+      }
+    }
+  }
+
+  .btn-icon {
+    --size: 1.6em;
+  }
+}
+
+.btn-icon {
+  --size: 2.2em;
+  width: var(--size);
+  height: var(--size);
+
+  &.large {
+    --size: 2.5em;
+
+    i {
+      font-size: 0.7em;
+    }
+  }
+
+  &.prev {
+    transform: scale3d(-1, 1, 1);
+  }
+
+  i {
+    font-size: 0.64em;
+
+    &:first-child {
+      opacity: 0;
+      transform: translate3d(-120%, -50%, 0) scale(0.8);
+    }
+  }
+}
+
+// This class is set on the card/wrapper
+.btn-icon-effect {
+  &.card-bg {
+    --spacing: 1.8em;
+  }
+
+  &.row-item {
+    .btn-icon {
+      right: 2em;
+      bottom: 50%;
+      transform: translate3d(calc(100% + 2em), 50%, 0);
+    }
+  }
+
+  .btn-icon {
+    right: var(--spacing);
+    background-color: var(--cl-btn-primary);
+    bottom: var(--spacing);
+    opacity: 0;
+    transform: translate3d(0, calc(var(--spacing) + 105%), 0);
+    @include transition(all);
+  }
+}
+
+@media (hover: hover) {
+  .btn--primary:hover:not(.back) {
+    padding: 0.94em 1.3em 0.94em 3.6em;
+
+    .btn-icon {
+      &:first-child {
+
+        transform: translate3d(0, -50%, 0);
+      }
+
+      &:last-child {
+        transform: translate3d(calc(105% + 0.7em), -50%, 0);
+      }
+    }
+  }
+
+  .btn--primary.back:hover {
+    padding: 0.7em 3em 0.7em 1.1em;
+
+    .btn-icon {
+      &:first-child {
+        opacity: 0;
+        transform: translate3d(-80%, -50%, 0) scale3d(-0.7, 0.7, 1);
+      }
+
+      &:last-child {
+        opacity: 1;
+        transform: translate3d(0, -50%, 0) scale3d(-1, 1, 1);
+      }
+    }
+  }
+
+  .btn-icon-effect:hover {
+    .btn-icon {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      
+    }
+
+    &.row-item {
+      .btn-icon {
+        transform: translate3d(0, 50%, 0);
+      }
+    }
+  }
+
+  .btn-icon:hover:not(.hover-disabled) {
+    i {
+      @include transition(all, 0.3s);
+
+      &:first-child {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0) scale(1);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translate3d(70%, -50%, 0) scale(0.8);
+      }
+    }
+  }
+}

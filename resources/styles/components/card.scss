@@ -1,0 +1,37 @@
+.card {
+  --spacing: 1.8em;
+  height: 100%;
+
+  &--small,
+  &--team {
+    --spacing: 1.15em;
+  }
+
+  &--team {
+    .card__image {
+      padding-bottom: 135%;
+    }
+
+    h4 {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__image {
+    padding-bottom: 68%;
+    margin-bottom: 1.5em;
+
+    .tags {
+      bottom: 1.2em;
+      left: 1.2em;
+    }
+  }
+
+  &__content {
+    margin-bottom: 1em;
+  }
+
+  &__date {
+    margin-bottom: 0.5em;
+  }
+}

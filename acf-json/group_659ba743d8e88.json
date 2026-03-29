@@ -1,0 +1,166 @@
+{
+    "key": "group_659ba743d8e88",
+    "title": "Weergave",
+    "fields": [
+        {
+            "key": "field_659ba7517f4aa",
+            "label": "Type header",
+            "name": "header_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image_overflow": "Afbeelding met overloop",
+                "image_radius": "Afbeelding met afgeronde hoek"
+            },
+            "default_value": "image_overflow",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_6839d33d0a265",
+            "label": "Type navigatiebalk",
+            "name": "nav_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "standard": "Standaard",
+                "white": "Wit met schaduw"
+            },
+            "default_value": "standard",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_659ba7ed7f4ab",
+            "label": "Type blok scheiding",
+            "name": "block_divider_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "Geen",
+                "rounded_corners": "Afgeronde hoeken",
+                "wave": "Golf",
+                "obliquely": "Schuin"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65a50db8e7ccf",
+            "label": "Aantal kolommen voor projecten",
+            "name": "columns_projects",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "two": "2",
+                "three": "3"
+            },
+            "default_value": "two",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65a50f30e7cd0",
+            "label": "Aantal kolommen voor berichten",
+            "name": "columns_posts",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "two": "2",
+                "three": "3"
+            },
+            "default_value": "two",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65a50f39e7cd1",
+            "label": "Aantal kolommen voor team",
+            "name": "columns_team",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "two": "2",
+                "three": "3"
+            },
+            "default_value": "two",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "stijl"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1748620423
+}

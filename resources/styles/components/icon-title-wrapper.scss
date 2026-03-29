@@ -1,0 +1,22 @@
+.icon-title {
+  img {
+    width: 2.4em;
+    height: 2.4em;
+  }
+
+  h6 {
+    flex: 1;
+    margin: 0 !important;
+  }
+}
+
+.icon-title-wrapper {
+  display: grid;
+  grid-gap: 1em;
+  grid-auto-rows: auto;
+  grid-template-columns: 1fr;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

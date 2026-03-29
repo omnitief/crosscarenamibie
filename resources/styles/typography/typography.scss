@@ -1,0 +1,162 @@
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body,
+a,
+button {
+  color: var(--cl-body-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+textarea,
+select,
+button,
+.button {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size);
+  line-height: var(--font-secondary-line-height);
+  font-weight: var(--font-secondary-weight);
+}
+
+.text {
+  &-large {
+    font-size: var(--font-size-large);
+  }
+
+  &-small {
+    font-size: var(--font-size-small);
+  }
+}
+
+h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6 {
+  margin-top: 0;
+  font-weight: var(--font-primary-weight);
+  font-family: var(--font-primary);
+  margin-bottom: var(--space-heading);
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6 {
+  --space-heading: 1.8rem;
+  line-height: calc(var(--font-primary-line-height) + 0.2);
+}
+
+h1 {
+  font-size: var(--title-size);
+  line-height: var(--font-primary-line-height);
+}
+
+h2,
+.h2 {
+  font-size: calc(var(--title-size) * 0.91);
+  line-height: calc(var(--font-primary-line-height) + 0.02);
+}
+
+h3,
+.h3 {
+  font-size: calc(var(--title-size) * 0.8);
+}
+
+h4,
+.h4 {
+  font-size: calc(var(--title-size) * 0.74);
+}
+
+h5,
+.h5 {
+  font-size: max(1.6rem, calc(var(--title-size) * 0.64));
+}
+
+h6 {
+  font-size: max(1.6rem, calc(var(--title-size) * 0.56));
+}
+
+p {
+  margin-top: 0;
+
+  &.h2 {
+    margin-bottom: 0.35em !important;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.subtitle {
+  margin-bottom: 0.8em !important;
+}
+
+.ccn-yellow {
+  color: var(--cl-btn-primary);
+}
+
+
+sup {
+  font-size: 0.6em;
+}
+
+.text {
+  h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6 {
+    &:not(:first-child) {
+      margin-top: min(1.2em, 3.8rem);
+    }
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  .btn:not(.m-t--none) {
+    margin-top: 2em;
+
+    &.mt-1 {
+      margin: 1em 0 1.6em;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+
+  a:not(.btn):not(.team__item):not(.label) {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

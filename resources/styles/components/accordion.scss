@@ -1,0 +1,52 @@
+.accordion {
+  gap: 0.8em 0;
+
+  @include media-breakpoint-up(md) {
+    gap: 1.1em 0;
+  }
+
+  &__item {
+    &__header {
+      position: relative;
+      cursor: pointer;
+      padding: 1em 1.2em;
+      gap: 2rem;
+      @include transition(padding, 0.5s);
+
+      @include media-breakpoint-up(md) {
+        padding: 1.1em 1.8em;
+      }
+
+      &--active {
+        padding-bottom: 1.5rem;
+
+        .icon-plus {
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+    &__body {
+      overflow: hidden;
+      opacity: 1;
+      @include transition(all, 0.4s);
+
+      &:not(.accordion__item__body--active) {
+        max-height: 0 !important;
+        opacity: 0;
+      }
+
+      &__inner {
+        padding: 0 1.2em 1.2em;
+
+        @include media-breakpoint-up(md) {
+          padding: 0 1.8em 1.6em;
+        }
+      }
+    }
+  }
+
+  .icon-plus {
+    @include transition(transform, 0.4s);
+  }
+}

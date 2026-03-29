@@ -1,0 +1,454 @@
+.f {
+  display: flex;
+
+  &w {
+    flex-wrap: wrap;
+  }
+
+  &wr {
+    flex-wrap: wrap-reverse;
+  }
+
+  &nw {
+    flex-wrap: nowrap;
+  }
+
+  &_c {
+    flex-direction: column;
+  }
+
+  &_cr {
+    flex-direction: column-reverse;
+  }
+
+  &_r {
+    flex-direction: row;
+  }
+
+  &_rr {
+    flex-direction: row-reverse;
+  }
+
+  &-c {
+    align-items: center;
+  }
+
+  &-fs {
+    align-items: flex-start;
+  }
+
+  &-fe {
+    align-items: flex-end;
+  }
+
+  &--fs {
+    justify-content: flex-start;
+  }
+
+  &--fe {
+    justify-content: flex-end;
+  }
+
+  &--c {
+    justify-content: center;
+  }
+
+  &--sb {
+    justify-content: space-between;
+  }
+}
+
+.if {
+  display: inline-flex;
+}
+
+.d {
+  &ib {
+    display: inline-block;
+  }
+
+  &if {
+    display: inline-flex;
+  }
+
+  &b {
+    display: block;
+  }
+
+  &n {
+    display: none;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.ff {
+  &-primary {
+    font-family: var(--font-primary);
+  }
+
+  &-secondary {
+    font-family: var(--font-secondary);
+  }
+}
+
+.fw {
+  &-5 {
+    font-weight: 500;
+  }
+
+  &-6 {
+    font-weight: 600;
+  }
+
+  &-7 {
+    font-weight: 700;
+  }
+}
+
+.p {
+  &r {
+    position: relative;
+  }
+
+  &f {
+    position: fixed;
+  }
+
+  &a {
+    position: absolute;
+
+    &-center {
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+img.cover,
+.of-cover {
+  object-fit: cover;
+}
+
+.of-contain {
+  object-fit: contain;
+}
+
+.o {
+  &hd {
+    overflow: hidden;
+  }
+}
+
+.z {
+  &-1 {
+    z-index: -1;
+  }
+
+  &9 {
+    z-index: 9;
+  }
+
+  &10 {
+    z-index: 10;
+  }
+
+  &999 {
+    z-index: 999;
+  }
+}
+
+.bg {
+  &-based {
+    background-color: var(--cl-based);
+  }
+
+  &-dark {
+    --cl-based: var(--cl-dark-contrast);
+    --cl-border: var(--cl-body-20);
+    background-color: var(--cl-dark);
+
+    .sidebar-cta {
+      background-color: var(--cl-body);
+    }
+
+    .downloads {
+      &__item:hover {
+        background-color: var(--cl-dark-text);
+        color: var(--cl-dark);
+      }
+    }
+
+    &,
+    a,
+    button {
+      --cl-body-text: var(--cl-dark-text);
+      color: var(--cl-dark-text);
+    }
+
+    &-contrast {
+      background-color: var(--cl-dark-contrast);
+      color: var(--cl-dark-contrast-text);
+    }
+
+    .bg-text {
+      color: var(--cl-dark);
+      background-color: var(--cl-dark-text);
+    }
+
+    .bg-dark:not(.bg-dark--skip) {
+      background-color: var(--cl-border);
+    }
+
+    .slider__text::before {
+      background-color: var(--cl-dark);
+    }
+
+    &.slider--logos .swiper .swiper-slide {
+      background-color: var(--cl-body);
+    }
+
+ 
+    .review {
+      button:after {
+        background-color: var(--cl-dark-text);
+      }
+
+      svg {
+        path {
+          fill: var(--cl-body-20);
+        }
+      }
+    }
+
+    input:not(.hidden):not([type="file"]),
+    textarea,
+    select {
+      background-color: var(--cl-dark-contrast);
+      color: var(--cl-dark-contrast-text);
+
+      @include placeholder() {
+        color: var(--cl-dark-contrast-text);
+      }
+    }
+
+    ul:not(.list--disable) {
+      li:before {
+        background-color: var(--cl-dark-text);
+      }
+    }
+  }
+
+  &-accent {
+    background-color: var(--cl-accent);
+    color: var(--cl-accent-text);
+  }
+
+  &-body {
+    background-color: var(--cl-body);
+
+    &-text {
+      background-color: var(--cl-body-text);
+    }
+
+    .slider__text::before {
+      background-color: var(--cl-body);
+    }
+
+    &.slider--logos .swiper .swiper-slide {
+      background-color: var(--cl-body);
+    }
+
+    .border-based {
+      border-color: var(--cl-border);
+    }
+
+    input:not(.hidden):not([type="file"]),
+    textarea,
+    select {
+      background-color: var(--cl-light);
+    }
+  }
+
+  &-light {
+    --cl-border: var(--cl-body);
+    --cl-based: var(--cl-body);
+    background-color: var(--cl-light);
+    color: var(--cl-light-text);
+
+    .slider__text::before {
+      background-color: var(--cl-light);
+    }
+
+    .sidebar-cta {
+      background-color: var(--cl-body);
+    }
+  }
+
+  &-text {
+    color: var(--cl-body);
+    background-color: var(--cl-body-text);
+  }
+}
+
+.cl {
+  &-white {
+    & {
+      color: white !important;
+    }
+
+    *:not(.btn) {
+      color: white;
+    }
+  }
+
+  &-dark {
+    & {
+      color: var(--cl-dark) !important;
+    }
+
+    *:not(.btn) {
+      color: var(--cl-dark);
+    }
+  }
+
+  &-accent {
+    & {
+      color: var(--cl-accent) !important;
+    }
+
+    *:not(.btn) {
+      color: var(--cl-dark);
+    }
+  }
+}
+
+.r {
+  border-radius: var(--radius);
+
+  &-large {
+    border-radius: var(--radius-large);
+  }
+
+  &-small {
+    border-radius: var(--radius-small);
+  }
+
+  &-50 {
+    border-radius: 50%;
+  }
+
+  &-img {
+    &-tl {
+      border-top-left-radius: var(--radius-img-large);
+    }
+
+    &-tr {
+      border-top-right-radius: var(--radius-img-large);
+    }
+
+    &-bl {
+      border-bottom-left-radius: var(--radius-img-large);
+    }
+
+    &-br {
+      border-bottom-right-radius: var(--radius-img-large);
+    }
+  }
+}
+
+.opacity {
+  &-80 {
+    opacity: 0.8;
+  }
+
+  &-50 {
+    opacity: 0.5;
+  }
+}
+
+.gap {
+  &-xsmall {
+    gap: 0.5em;
+  }
+
+  &-small {
+    gap: 1em;
+  }
+
+  &-medium {
+    gap: 1em 3em;
+  }
+
+  &-row {
+    gap: calc(var(--space-grid) * 2) 0;
+
+    &-horizontal {
+      gap: calc(var(--space-grid) * 2);
+    }
+
+    &-medium {
+      gap: var(--space-small) 0;
+    }
+
+    &-large {
+      gap: var(--space-small) 0;
+
+      @include media-breakpoint-up(lg) {
+        --space-grid: calc(var(--space-small) / 2.6);
+      }
+    }
+  }
+
+  &-heading {
+    gap: var(--space-heading) 0;
+  }
+}
+
+.border {
+  border: 2.5px solid var(--cl-border);
+
+  &-based {
+    border: 2.5px solid transparent;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.wp-block-image,
+.wp-block-video,
+.wp-block-embed {
+  margin: 2em 0;
+  max-width: 100%;
+  height: auto;
+
+  img,
+  video {
+    height: auto;
+    width: 100%;
+  }
+
+  iframe {
+    height: auto;
+    width: 100%;
+  }
+  
+  &.is-type-video {
+    iframe {
+      aspect-ratio: 16/9;
+    }
+  }
+}

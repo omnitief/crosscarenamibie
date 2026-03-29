@@ -1,0 +1,56 @@
+.cta {
+  --space-heading: 2rem;
+
+  &__left {
+    gap: 1em calc(var(--space-medium) * 0.7);
+
+    @include media-breakpoint-between(lg, xxl) {
+      gap: 1em calc(var(--space-medium) * 0.4);
+    }
+  }
+
+  &__right {
+    gap: calc(var(--space-grid) * 2);
+
+    @include media-breakpoint-up(lg) {
+      justify-content: flex-end;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      min-width: 480px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      gap: 1em calc(var(--space-medium) * 0.6);
+    }
+  }
+
+  &__image {
+    width: 6em;
+    height: 6em;
+
+    @include media-breakpoint-up(md) {
+      width: 8em;
+      height: 8em;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 10em;
+      height: 10em;
+    }
+  }
+
+  &__text {
+    max-width: 30em;
+
+    @include media-breakpoint-up(md) {
+      width: 65%;
+    }
+  }
+
+  .container {
+    @include media-breakpoint-up(lg) {
+      flex-flow: nowrap;
+    }
+  }
+}

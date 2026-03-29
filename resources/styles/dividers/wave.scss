@@ -1,0 +1,160 @@
+.dv-wave {
+  --dv-height: 3.92vw;
+  .divider {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: absolute;
+    transform: translate3d(0, -99%, 0);
+  }
+
+  // General
+  section {
+    .row {
+      margin-bottom: var(--dv-height);
+    }
+
+    &.slider {
+      .container {
+        margin-bottom: var(--dv-height);
+      }
+    }
+  }
+
+  // Header
+  .header {
+    &.header--small.header--overlap + section {
+      &::before {
+        height: var(--space-large);
+      }
+
+      &::after {
+        content: none;
+      }
+
+      .divider {
+        top: var(--space-large);
+      }
+    }
+
+    & + section {
+      position: relative;
+
+      .divider {
+        position: absolute;
+        top: 0;
+        transform: translate3d(0, -99%, 0);
+      }
+    }
+  }
+
+  // Text image
+  .text-image {
+    &.text-image--no-extra-img {
+      &.img-contain {
+        .row {
+          margin-bottom: var(--dv-height);
+        }
+      }
+
+      &:not(.img-contain) {
+        margin-top: calc(var(--dv-height) * -1);
+        .divider {
+          transform: scale3d(-1, -1, 1) translate3d(0px, 1px, 0);
+          background-color: transparent;
+          position: absolute;
+          z-index: 1;
+
+          & + .text-image__inner .text-image__text {
+            margin-top: 3vw;
+          }
+        }
+      }
+    }
+
+    .divider.bottom {
+      position: absolute;
+      top: auto;
+      bottom: calc(var(--space-small) - 1px);
+      transform: none;
+      z-index: 1;
+      background-color: transparent;
+
+      &.bg-body path {
+        fill: var(--cl-body);
+      }
+
+      &.bg-dark path {
+        fill: var(--cl-dark);
+      }
+
+      &.bg-light path {
+        fill: var(--cl-light);
+      }
+
+      & + .overlap {
+        height: var(--space-small);
+      }
+    }
+
+    .row {
+      margin-bottom: 0;
+    }
+  }
+
+
+
+  // Footer
+  footer {
+    &.bg-dark {
+      .divider path {
+        fill: var(--cl-dark);
+      }
+    }
+  }
+
+  // General
+  section {
+    &.bg-body {
+      & + .text-image--no-extra-img:not(.img-contain) .divider path {
+        fill: var(--cl-body);
+      }
+
+      & + * .divider {
+        // background-color: var(--cl-body);
+      }
+
+      .divider path {
+        fill: var(--cl-body);
+      }
+    }
+
+    &.bg-dark {
+      & + .text-image--no-extra-img:not(.img-contain) .divider path {
+        fill: var(--cl-dark);
+      }
+
+      & + * .divider {
+        // background-color: var(--cl-dark);
+      }
+
+      .divider path {
+        fill: var(--cl-dark);
+      }
+    }
+
+    &.bg-light {
+      & + .text-image--no-extra-img:not(.img-contain) .divider path {
+        fill: var(--cl-light);
+      }
+
+      & + * .divider {
+        // background-color: var(--cl-light);
+      }
+
+      .divider path {
+        fill: var(--cl-light);
+      }
+    }
+  }
+}

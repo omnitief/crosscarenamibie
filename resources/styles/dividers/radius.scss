@@ -1,0 +1,79 @@
+body.dv-radius {
+  section:not(.dv--disable),
+  footer,
+  .footer__row {
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-top: calc(var(--radius) * -1);
+    .footer__row--last {
+      margin-top: 0px;
+    }
+  }
+
+  section.text-image {
+    .text-image__inner {
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+  }
+
+  section {
+    .row {
+      margin-bottom: var(--radius);
+    }
+
+    &.slider {
+      .container {
+        margin-bottom: var(--radius);
+      }
+    }
+  }
+
+  // Header
+  .header.header--small {
+    &.header--overlap + section::after {
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    .container {
+      margin-bottom: var(--radius);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .header:not(.header--small) .header__text {
+      margin-bottom: var(--radius);
+    }
+  }
+
+  // Text image
+  .text-image {
+    &--no-extra-img {
+      & + .text-image:not(.img-contain) {
+        margin-top: calc(var(--radius) * -2);
+      }
+
+      .text-image__inner {
+        margin-bottom: var(--radius);
+
+        .row {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &--extra-img {
+      .row {
+        margin-bottom: 0;
+      }
+
+      & + section {
+        margin-top: -1px;
+        border-radius: 0;
+      }
+    }
+  }
+
+  // Overlap
+  .overlap.bottom {
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+}

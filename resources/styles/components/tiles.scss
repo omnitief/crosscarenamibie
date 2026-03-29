@@ -1,0 +1,35 @@
+.tile {
+  --spacing: 1.5em;
+  padding: 1.4em;
+  min-height: 100%;
+
+  @include media-breakpoint-up(md) {
+    padding: 1.7em 1.8em 1.8em;
+  }
+
+  &__icon {
+    width: 4.6em;
+    height: 4.6em;
+    margin-bottom: 1.2em;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 2.2em;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+a.tile .text-small {
+  @include media-breakpoint-up(lg) {
+    max-width: 84%;
+  }
+}
+
+.bg-dark .tile {
+  color: var(--cl-dark);
+}

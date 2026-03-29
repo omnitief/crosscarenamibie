@@ -1,0 +1,344 @@
+input:not(.hidden):not([type="file"]),
+textarea,
+select {
+  width: 100%;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  padding: var(--input-pd) !important;
+  border: none;
+  color: var(--cl-body-text);
+  background-color: var(--cl-body);
+  border-radius: var(--radius-small);
+  font-size: var(--font-size-small) !important;
+  font-weight: 500;
+  line-height: 1.5 !important;
+
+  @include placeholder() {
+    color: var(--cl-body-text);
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+input:not(.hidden):not([type="file"]).transparent {
+  background-color: transparent;
+  padding: 0;
+
+  @include placeholder() {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+textarea {
+  height: 9em;
+}
+
+.searchform {
+  input {
+    flex: 1 0 100%;
+
+    @include media-breakpoint-up(md) {
+      flex: 1;
+    }
+  }
+}
+
+.select:not(#filter-input),
+.ginput_container_select {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: 2.5rem;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    z-index: 1;
+    font-size: 0.4em;
+    font-family: "icons" !important;
+    content: "\e905";
+  }
+}
+
+.select {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  select {
+    border-radius: 10rem;
+    background-color: transparent;
+  }
+}
+
+select {
+  width: 100%;
+  cursor: pointer;
+  padding-right: 5rem;
+
+  @include media-breakpoint-up(md) {
+    padding-right: 7rem;
+  }
+}
+
+input[type="checkbox"]:not(.hidden),
+input[type="radio"]:not(.hidden) {
+  margin: 0;
+  position: absolute;
+  opacity: 0;
+
+  &:checked + label:not(.label),
+  &:checked + span {
+    &::before {
+      content: "\e900";
+      background-color: var(--cl-body-text);
+    }
+  }
+
+  & + label:not(.label),
+  & + span {
+    position: relative;
+    padding-left: 1.5em;
+    cursor: pointer;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: 2em;
+      height: 2em;
+      border-radius: 0.4em;
+      border: 2px solid var(--cl-body-text);
+      font-family: "icons" !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.5em;
+      color: var(--cl-body);
+    }
+  }
+
+  & + span {
+    display: block;
+  }
+}
+
+input[type="radio"] {
+  & + label,
+  & + span {
+    &::before {
+      border-radius: 50%;
+    }
+  }
+}
+
+.gform_wrapper.gravity-theme .gform_footer,
+.gform_wrapper.gravity-theme .gform_page_footer {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.gform_wrapper {
+  .gform_validation_errors,
+  .gform_required_legend,
+  legend,
+  .validation_message {
+    display: none !important;
+  }
+
+  .btn {
+    margin-top: 1.4em;
+    margin-bottom: 0 !important;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+
+.gform_wrapper.gravity-theme .gform_fields {
+  gap: 0.7em !important;
+
+  @include media-breakpoint-up(lg) {
+    gap: 1.25em !important;
+  }
+}
+
+.gform_fields {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+
+  @include media-breakpoint-up(md) {
+    gap: 1.5rem 1rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    gap: 2.5rem 1.25rem;
+  }
+}
+
+.gfield {
+  width: 100%;
+
+  &--type-fileupload {
+    label {
+      display: block !important;
+    }
+  }
+}
+
+.ginput_container_consent {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.gform_validation_errors,
+.gform_confirmation_message {
+  border-radius: 5rem;
+  padding: 0.95em 1.6em;
+  font-weight: 600;
+  outline: 0;
+  line-height: 1.2;
+  margin-bottom: 1.3em;
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2rem;
+  }
+}
+
+.gform_validation_errors {
+  border: 2.5px solid var(--cl-error);
+  color: var(--cl-error);
+}
+
+.gform_confirmation_message {
+  border: 2.5px solid var(--cl-border);
+}
+
+.gfield_error {
+  .ginput_container_consent {
+    &,
+    * {
+      color: var(--cl-error);
+    }
+  }
+
+  .ginput_container:not(.ginput_container_consent):not(
+      .ginput_container_fileupload
+    ) {
+    position: relative;
+
+    &::after {
+      font-family: "icons" !important;
+      content: "\e913";
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      color: var(--cl-error);
+
+      @include media-breakpoint-up(lg) {
+        right: 3.2rem;
+      }
+    }
+  }
+
+  .gform_drop_area {
+    border-color: var(--cl-error);
+  }
+}
+
+.gfield_description {
+  display: block;
+  margin-top: 0.8em;
+  line-height: 1.3;
+  font-size: min(1.8rem, var(--font-size));
+}
+
+.gform_drop_area {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 32px;
+  text-align: center;
+
+  button {
+    display: block;
+    margin: 0.8em auto 0;
+    background-color: var(--cl-btn-secondary);
+    color: var(--cl-btn-secondary-text-ball);
+    border-radius: 10em;
+    font-weight: 600;
+    padding: 0.3em 1.2em;
+  }
+}
+
+.ginput_preview_list {
+  line-height: 1.3;
+  font-size: min(1.8rem, var(--font-size));
+  margin-top: 1em;
+
+  .ginput_preview {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      padding-bottom: 1em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid rgba(25, 45, 51, 0.2);
+    }
+  }
+
+  button {
+    display: flex;
+    margin-left: 0.5em;
+    font-size: min(1.8rem, var(--font-size));
+
+    span:last-child {
+      display: none;
+    }
+  }
+}
+
+.ginput_container_textarea {
+  display: flex;
+}
+
+@media (max-width: 640px) {
+  .gform_wrapper.gravity-theme .ginput_complex {
+    margin-bottom: -0.7em;
+    span {
+      margin-bottom: 1.4em;
+    }
+  }
+}
+
+
+.newspaper {
+    .btn {
+      margin-top: 0;
+      width: 100%;
+    }
+}

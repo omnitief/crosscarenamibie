@@ -1,0 +1,24 @@
+:root {
+  // Fonts & sizes
+  --title-size: min(9.8vw, 3.7rem);
+  --font-size: 1.7rem;
+  --font-size-large: calc(var(--font-size) * 1.1);
+  --font-size-small: calc(var(--font-size) * 0.9);
+
+  // Animations
+  --trns-ease: cubic-bezier(0.43, 0.06, 0.44, 0.99);
+  --trns-timing: 0.3s;
+
+  // Spacing
+  --space-xsmall: min(2.5em, 6vw);
+  --space-small: max(1.5rem, 5vh);
+  --space-medium: max(4rem, 6vh);
+  --space-large: max(7rem, 7.5vh);
+  --space-grid: 1em;
+  --space-container: 2.5rem;
+  --space-heading: 2.5rem;
+  --nav-height: 5.2em;
+
+  // Forms
+  --input-pd: 1.1em 1.5em;
+}

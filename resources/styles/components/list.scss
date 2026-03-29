@@ -1,0 +1,48 @@
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  &:not(.list--disable) {
+    li {
+      position: relative;
+      padding-left: 1em;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0.65em;
+        left: 0;
+        width: 0.35em;
+        height: 0.35em;
+        background-color: var(--cl-body-text);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+ol {
+  counter-reset: counter;
+
+  li {
+    list-style: none;
+    counter-increment: counter;
+
+    &::before {
+      content: counter(counter) ". ";
+      margin-right: 0.3em;
+      min-width: 1.2em;
+      display: inline-block;
+      text-align: left;
+      font-weight: 600;
+      color: var(--cl-dark);
+    }
+  }
+}

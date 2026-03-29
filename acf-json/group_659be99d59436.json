@@ -1,0 +1,221 @@
+{
+    "key": "group_659be99d59436",
+    "title": "Lettertypes",
+    "fields": [
+        {
+            "key": "field_659be99da4484",
+            "label": "Koptekst",
+            "name": "heading_font",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_659be9cfa4485",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Voeg hier de HTML tag(s) toe.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: <link rel=\"stylesheet\" href=\"https:\/\/use.typekit.net\/pie0fjm.css\">",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_659bea01a4486",
+                    "label": "Naam",
+                    "name": "family",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: \"mundial\", sans-serif",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_659bea15a4488",
+                    "label": "Dikte",
+                    "name": "weight",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: 400",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_659bea0ba4487",
+                    "label": "Regelhoogte",
+                    "name": "line_height",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: 1.2",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_659bea5ba4489",
+            "label": "Broodtekst",
+            "name": "text_font",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_659bea5ba448a",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Voeg hier de HTML tag(s) toe. Wanneer het veld <b>Link<\/b> van de <b>Koptekst<\/b> hetzelfde is, kan dit veld leeggelaten worden.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: <link rel=\"stylesheet\" href=\"https:\/\/use.typekit.net\/pie0fjm.css\">",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_659bea5ba448b",
+                    "label": "Naam",
+                    "name": "family",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Wanneer het veld <b>Naam<\/b> van de <b>Koptekst<\/b> hetzelfde is, kan dit veld leeggelaten worden.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: \"mundial\", sans-serif",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_659bea5ba448c",
+                    "label": "Dikte",
+                    "name": "weight",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: 400",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_659bea5ba448d",
+                    "label": "Regelhoogte",
+                    "name": "line_height",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Bijvoorbeeld: 1.2",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "stijl"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1704718462
+}
