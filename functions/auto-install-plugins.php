@@ -56,7 +56,7 @@ function ch_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
-	 */
+	*/
 	$plugins = array(
 		array(
 			'name'               => 'Advanced Custom Fields PRO',

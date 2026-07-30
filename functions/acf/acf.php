@@ -1,6 +1,6 @@
 <?php
 // Custom block category
-function block_categories( $categories ) {
+function custom_block_categories( $categories ) {
 	return array_merge(
 		$categories,
 		[
@@ -11,7 +11,7 @@ function block_categories( $categories ) {
 		]
 	);
 }
-add_filter( 'block_categories', 'block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'custom_block_categories', 10, 2 );
 
 // The blocks that are shown
 add_filter ( 'allowed_block_types_all', 'allowed_post_type_blocks', 10, 2 );

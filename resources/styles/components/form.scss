@@ -342,3 +342,18 @@ fieldset {
       width: 100%;
     }
 }
+
+.ginput_container_fileupload input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.file-upload-btn {
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 30px;
+  padding: 10px 16px;
+margin-right: 10px;  color: inherit;
+  transition: none !important;
+}

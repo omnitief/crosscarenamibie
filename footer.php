@@ -120,18 +120,22 @@ if (!$cta_hide) {
 	<?php divider(); ?>
 	<div class="footer__row pr p-t--large p-b--large">
 		<div class="container">
+			<?php
+			$lang = function_exists('pll_current_language') ? pll_current_language('slug') : 'nl';
+			$suffix = ($lang === 'en') ? '_en' : '';
+			?>
 			<div class="row gap-row">
 				<div class="col-12 col-sm-6 col-xl-3">
-					<?php dynamic_sidebar('footer_column_first'); ?>
+					<?php dynamic_sidebar('footer_column_first' . $suffix); ?>
 				</div>
 				<div class="col-12 col-sm-6 col-xl-3">
-					<?php dynamic_sidebar('footer_column_second'); ?>
+					<?php dynamic_sidebar('footer_column_second' . $suffix); ?>
 				</div>
 				<div class="col-12 col-sm-6 col-xl-3">
-					<?php dynamic_sidebar('footer_column_third'); ?>
+					<?php dynamic_sidebar('footer_column_third' . $suffix); ?>
 				</div>
 				<div class="col-12 col-sm-6 col-xl-3">
-					<?php dynamic_sidebar('footer_column_fourth'); ?>
+					<?php dynamic_sidebar('footer_column_fourth' . $suffix); ?>
 				</div>
 			</div>
 		</div>
