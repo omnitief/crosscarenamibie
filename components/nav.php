@@ -47,7 +47,7 @@ if($nav_type === 'white') {
 				?>
 			</ul>
 
-			<button id="toggle-menu" class="btn btn--toggle pr fw-7 z9 bg-body r f f-c f--sb ff-primary cl-dark xl-dn" aria-label="<?php _e('Open het mobiele menu', 'swift'); ?>">
+			<button id="toggle-menu" class="btn btn--toggle nav__toggle pr fw-7 z9 bg-body r f f-c f--sb ff-primary cl-dark xl-dn" aria-label="<?php _e('Open het mobiele menu', 'swift'); ?>">
 				<span data-toggle-title="<?php _e('Sluiten', 'swift'); ?>"><?php _e('Menu', 'swift'); ?></span>
 				<span class="btn__icon pr">
 					<span class="bg-dark bg-dark--skip"></span>
