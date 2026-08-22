@@ -8,6 +8,7 @@ module.exports = (env) => {
 		entry: {
 			main: './scripts/index.js',
 			not_critical: ['./styles/not-critical.scss'],
+			editor: ['./styles/editor.scss'],
 		},
 		module: {
 			rules: [{

@@ -31,22 +31,6 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 add_theme_support( 'post-thumbnails' ); 
 remove_theme_support( 'core-block-patterns' );
 
-// Custom css for Gutenberg editor
-add_action( 'admin_head', 'ac_custom_admin_css' );
-function ac_custom_admin_css() {
-	echo '<style type="text/css">
-			.wp-block { max-width: 1050px; }
-			.edit-post-visual-editor .block-editor-block-list__block:not(.wp-block-paragraph):not(.wp-block-heading):not(.wp-block-list):not(.wp-block-quote):not(.wp-block-image):not(.wp-block-list-item) {
-				margin-top: 5rem;
-			}
-	</style>';
-}
-
-add_action('admin_head', 'admin_styles');
-function admin_styles() {
-  echo '<style>.dn{display:none!important;}.block-editor-block-list__block::before{content:attr(data-title);position:relative;display:block;font-size:20px;font-weight:700;max-width:1050px;margin:0 auto 16px;line-height:1;}.block-editor-block-list__block .acf-block-component{max-width:1050px;margin:0 auto;}.wp-block-paragraph:before,.wp-block-heading:before,.wp-block-list:before,.wp-block-quote:before,.wp-block-image:before,.wp-block-list-item:before{content:none;}</style>';
-}
-
 add_action( 'init', 'register_my_menus' );
 function register_my_menus() {
 	register_nav_menus([
@@ -73,4 +57,3 @@ function remove_menus(){
 		$role_object->add_cap( 'edit_theme_options' );
 	}
 }
-

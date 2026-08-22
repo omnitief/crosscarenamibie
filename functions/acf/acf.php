@@ -73,10 +73,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'download',
 		'keywords'        => [ 'Downloads' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -87,10 +87,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'admin-links',
 		'keywords'        => [ 'Knop' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -101,10 +101,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'editor-code',
 		'keywords'        => [ 'Iframe', 'Maps' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -115,10 +115,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'align-wide',
 		'keywords'        => [ 'Accordeon' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -129,10 +129,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'align-wide',
 		'keywords'        => [ 'Accordeon' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -143,10 +143,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'email',
 		'keywords'        => [ 'Formulier' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -157,10 +157,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'email',
 		'keywords'        => [ 'Nieuwsbrief', 'Inschrijven' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -171,10 +171,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'email',
 		'keywords'        => [ 'Formulier' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -185,10 +185,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'align-wide',
 		'keywords'        => [ 'Icoon + tekst' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -199,10 +199,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'admin-generic',
 		'keywords'        => [ 'Projecten' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -213,10 +213,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'editor-textcolor',
 		'keywords'        => [ 'Tekst', 'Paragraaf' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		]
 	]);
 
@@ -227,10 +227,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'align-pull-right',
 		'keywords'        => [ 'Tekst', 'Afbeelding' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		]
 	]);
 
@@ -241,10 +241,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'align-pull-left',
 		'keywords'        => [ 'Tekst', 'Sidebar' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		]
 	]);
 
@@ -255,10 +255,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'format-gallery',
 		'keywords'        => [ 'Galerij', 'Afbeelding(en)' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		]
 	]);
 
@@ -269,10 +269,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'businessperson',
 		'keywords'        => [ 'Vacatures' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		]
 	]);
 
@@ -283,10 +283,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'grid-view',
 		'keywords'        => [ 'Tegels', 'Links', 'Pagina links' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		]
 	]);
 
@@ -297,10 +297,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'format-image',
 		'keywords'        => [ 'Logos', 'Slider' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -311,10 +311,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'format-quote',
 		'keywords'        => [ 'Reviews' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -325,10 +325,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'groups',
 		'keywords'        => [ 'Team' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -339,10 +339,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'welcome-write-blog',
 		'keywords'        => [ 'Berichten' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 
@@ -353,10 +353,10 @@ function register_acf_block_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'heart',
 		'keywords'        => [ 'USPs' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 				'align'  => false,
-				'mode'   => false,
 		],
 	]);
 }
@@ -369,10 +369,10 @@ function register_acf_widget_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'phone',
 		'keywords'        => [ 'Contact' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 			'align'  => false,
-			'mode'   => false,
 		]
 	]);
 
@@ -383,10 +383,10 @@ function register_acf_widget_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'admin-links',
 		'keywords'        => [ 'Menu', 'Link' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 			'align'  => false,
-			'mode'   => false,
 		]
 	]);
 
@@ -397,10 +397,10 @@ function register_acf_widget_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'share',
 		'keywords'        => [ 'Social' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 			'align'  => false,
-			'mode'   => false,
 		]
 	]);
 
@@ -411,10 +411,10 @@ function register_acf_widget_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'editor-textcolor',
 		'keywords'        => [ 'Tekst', 'Paragraaf' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 			'align'  => false,
-			'mode'   => false,
 		]
 	]);
 
@@ -425,10 +425,10 @@ function register_acf_widget_types() {
 		'category'        => 'custom_blocks',
 		'icon'            => 'format-image',
 		'keywords'        => [ 'Afbeelding' ],
-		'mode'            => 'edit',
+		'api_version'     => 3,
+		'acf_block_version'=> 3,
 		'supports'        => [
 			'align'  => false,
-			'mode'   => false,
 		]
 	]);
 }
