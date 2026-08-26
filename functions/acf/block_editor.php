@@ -45,7 +45,7 @@ function swift_acf_block_type_args( $args, $name = null ) {
 	return $args;
 }
 add_filter( 'acf/register_block_type_args', 'swift_acf_block_type_args', 10, 2 );
-
+	
 function swift_render_acf_block( $block, $content = '', $is_preview = false, $post_id = 0 ) {
 	$block_name = isset( $block['name'] ) ? $block['name'] : '';
 	$templates = swift_get_acf_block_template_map();
@@ -57,10 +57,6 @@ function swift_render_acf_block( $block, $content = '', $is_preview = false, $po
 	$template = locate_template( $templates[ $block_name ] );
 
 	if ( '' === $template ) {
-		return '';
-	}
-
-	if ( $is_preview && ( is_admin() || wp_doing_ajax() ) ) {
 		return '';
 	}
 
