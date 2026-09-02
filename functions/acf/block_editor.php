@@ -1,5 +1,89 @@
 <?php
 
+/**
+ * Keep this theme's legacy ACF blocks on the WordPress/ACF v3 APIs.
+ *
+ * This deliberately mirrors the production registration normalisation, but
+ * only for blocks owned by this theme. Plugin-provided ACF blocks must retain
+ * their own declared block version and editing configuration.
+ */
+function swift_get_theme_acf_block_names() {
+	return [
+		'acf/downloads',
+		'acf/button',
+		'acf/iframe',
+		'acf/accordiononly',
+		'acf/accordion',
+		'acf/formonly',
+		'acf/newspaper',
+		'acf/form',
+		'acf/rows',
+		'acf/projects',
+		'acf/text',
+		'acf/textimage',
+		'acf/textsidebar',
+		'acf/gallery',
+		'acf/joboffers',
+		'acf/titles',
+		'acf/logoslider',
+		'acf/reviews',
+		'acf/team',
+		'acf/posts',
+		'acf/usps',
+		'acf/contactwidget',
+		'acf/menuwidget',
+		'acf/socialwidget',
+		'acf/textwidget',
+		'acf/imagewidget',
+	];
+}
+
+function swift_acf_block_type_args( $args, $name = null ) {
+	$block_name = isset( $args['name'] ) ? $args['name'] : $name;
+
+	if ( ! in_array( $block_name, swift_get_theme_acf_block_names(), true ) ) {
+		return $args;
+	}
+
+	$args['api_version'] = 3;
+	$args['acf_block_version'] = 3;
+	unset( $args['mode'], $args['auto_inline_editing'] );
+
+	if ( isset( $args['supports'] ) && is_array( $args['supports'] ) ) {
+		unset( $args['supports']['mode'] );
+	}
+
+	return $args;
+}
+add_filter( 'acf/register_block_type_args', 'swift_acf_block_type_args', 10, 2 );
+
+/**
+ * Temporary, opt-in registration tracing for staging. Enable only with
+ * define( 'SWIFT_ACF_BLOCK_DEBUG', true ) in wp-config.php.
+ */
+function swift_log_acf_text_block_args( $args, $name = null ) {
+	$block_name = isset( $args['name'] ) ? $args['name'] : $name;
+
+	if ( 'acf/text' === $block_name && defined( 'SWIFT_ACF_BLOCK_DEBUG' ) && SWIFT_ACF_BLOCK_DEBUG ) {
+		error_log(
+			'ACF text final registration args: ' . wp_json_encode(
+				[
+					'name'              => $block_name,
+					'api_version'       => $args['api_version'] ?? null,
+					'acf_block_version' => $args['acf_block_version'] ?? null,
+					'mode'              => $args['mode'] ?? null,
+					'auto_inline_editing' => $args['auto_inline_editing'] ?? null,
+					'supports'          => $args['supports'] ?? null,
+					'render_template'   => $args['render_template'] ?? null,
+				]
+			)
+		);
+	}
+
+	return $args;
+}
+add_filter( 'acf/register_block_type_args', 'swift_log_acf_text_block_args', PHP_INT_MAX, 2 );
+
 function swift_get_theme_font_stylesheets() {
 	$stylesheets = [];
 	if ( ! function_exists( 'get_field' ) || ! did_action( 'acf/init' ) ) {
