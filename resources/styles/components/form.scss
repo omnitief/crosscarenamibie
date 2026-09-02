@@ -147,19 +147,6 @@ input[type="radio"] {
   margin: 0 !important;
 }
 
-.gform_wrapper .gform_page_footer .gform_next_button,
-.gform_wrapper .gform_page_footer .gform_previous_button {
-  padding-left: 1.3em;
-  padding-right: 1.3em;
-
-  @media (hover: hover) {
-    &:hover {
-      padding-left: 1.3em;
-      padding-right: 1.3em;
-    }
-  }
-}
-
 .gform_wrapper {
   .gform_validation_errors,
   .gform_required_legend,

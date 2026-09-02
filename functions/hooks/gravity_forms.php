@@ -1,21 +1,6 @@
 <?php
-add_filter( 'gform_submit_button', 'swift_change_gravity_forms_submit_button_html', 10, 2 );
-add_filter( 'gform_next_button', 'swift_change_gravity_forms_next_button_html', 10, 2 );
-add_filter( 'gform_previous_button', 'swift_change_gravity_forms_previous_button_html', 10, 2 );
-
-function swift_change_gravity_forms_submit_button_html( $button, $form ) {
-	return swift_change_gravity_forms_button_html( $button, $form, 'submit' );
-}
-
-function swift_change_gravity_forms_next_button_html( $button, $form ) {
-	return swift_change_gravity_forms_button_html( $button, $form, 'next' );
-}
-
-function swift_change_gravity_forms_previous_button_html( $button, $form ) {
-	return swift_change_gravity_forms_button_html( $button, $form, 'previous' );
-}
-
-function swift_change_gravity_forms_button_html( $button, $form, $button_type = 'submit' ) {
+add_filter( 'gform_submit_button', 'submit_change_html', 10, 2 );
+function submit_change_html( $button, $form ) {
 	if ( empty( $button ) || ! is_string( $button ) ) {
 		return $button;
 	}
@@ -32,47 +17,27 @@ function swift_change_gravity_forms_button_html( $button, $form, $button_type = 
 		return $button;
 	}
 
-	$button_classes = 'btn btn--primary style-primary ohd pr dif f-c fw-7';
-	$button_icon = 'submit' === $button_type ? '<span class="btn-icon r-50 pr ohd pa hover-disabled bg-based"><i class="icon icon-arrow pa pa-center"></i><i class="icon icon-arrow pa pa-center"></i></span><span class="btn-icon r-50 pr ohd pa hover-disabled bg-based"><i class="icon icon-arrow pa pa-center"></i><i class="icon icon-arrow pa pa-center"></i></span>' : '';
+	$form_id = isset( $form['id'] ) ? absint( $form['id'] ) : 0;
 
 	if ( preg_match( '/<button\b([^>]*)>(.*?)<\/button>/is', $button, $matches ) ) {
 		$attributes = $matches[1];
-		$button_class = swift_merge_gf_button_classes( $attributes, $button_classes );
+		$icon_markup = '<span class="btn-icon r-50 pr ohd pa hover-disabled bg-based"><i class="icon icon-arrow pa pa-center"></i><i class="icon icon-arrow pa pa-center"></i></span><span class="btn-icon r-50 pr ohd pa hover-disabled bg-based"><i class="icon icon-arrow pa pa-center"></i><i class="icon icon-arrow pa pa-center"></i></span>';
+
 		$attributes = preg_replace( '/\sclass=(["\']).*?\1/i', '', $attributes );
 		$attributes = preg_replace( '/\saria-label=(["\']).*?\1/i', '', $attributes );
 
-		return '<button' . $attributes . ' class="' . esc_attr( $button_class ) . '" aria-label="' . esc_attr( $button_text ) . '">' . esc_html( $button_text ) . $button_icon . '</button>';
+		return '<button' . $attributes . ' class="btn btn--primary style-primary ohd pr dif f-c fw-7" aria-label="' . esc_attr( $button_text ) . '">' . esc_html( $button_text ) . $icon_markup . '</button>';
 	}
 
 	if ( preg_match( '/<input\b([^>]*)>/is', $button, $matches ) ) {
 		$attributes = $matches[1];
-		$button_class = swift_merge_gf_button_classes( $attributes, $button_classes );
 		$attributes = preg_replace( '/\sclass=(["\']).*?\1/i', '', $attributes );
 		$attributes = preg_replace( '/\svalue=(["\']).*?\1/i', '', $attributes );
-		$type = 'submit';
 
-		if ( 'next' === $button_type || 'previous' === $button_type ) {
-			$type = 'button';
-		}
-
-		return '<button' . $attributes . ' class="' . esc_attr( $button_class ) . '" type="' . esc_attr( $type ) . '" aria-label="' . esc_attr( $button_text ) . '">' . esc_html( $button_text ) . $button_icon . '</button>';
+		return '<button' . $attributes . ' class="btn btn--primary style-primary ohd pr dif f-c fw-7" type="submit" aria-label="' . esc_attr( $button_text ) . '">' . esc_html( $button_text ) . '<span class="btn-icon r-50 pr ohd pa hover-disabled bg-based"><i class="icon icon-arrow pa pa-center"></i><i class="icon icon-arrow pa pa-center"></i></span><span class="btn-icon r-50 pr ohd pa hover-disabled bg-based"><i class="icon icon-arrow pa pa-center"></i><i class="icon icon-arrow pa pa-center"></i></span></button>';
 	}
 
 	return $button;
-}
-
-function swift_merge_gf_button_classes( $attributes, $button_classes ) {
-	$original_classes = '';
-
-	if ( preg_match( '/\sclass=(["\'])(.*?)\1/i', $attributes, $matches ) ) {
-		$original_classes = trim( $matches[2] );
-	}
-
-	if ( '' === $original_classes ) {
-		return $button_classes;
-	}
-
-	return trim( $original_classes . ' ' . $button_classes );
 }
 
 add_filter( 'gform_validation_message', 'change_message', 10, 2 );

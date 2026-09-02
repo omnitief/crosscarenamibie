@@ -1,4 +1,8 @@
-<?php 
+<?php
+if ( custom_acf_is_backend_block_preview() ) {
+	return;
+}
+ 
 $space = get_spacing_class( get_field('space') );
 $title_group = get_field('title');
 

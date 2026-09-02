@@ -1,4 +1,8 @@
 <?php
+if ( custom_acf_is_backend_block_preview() ) {
+	return;
+}
+
 $space = get_spacing_class( get_field('space') );
 $background_color = get_color_classes(get_field('background_color'));
 $full_id = get_full_id(get_field('id'));

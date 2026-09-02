@@ -1,20 +1,35 @@
-body.editor-styles-wrapper {
-	a:not(.components-button):not(.wp-element-button) {
-		text-decoration: underline;
+/*
+ * This entry is intentionally independent of index.scss and not-critical.scss.
+ * It is used only by the block editor chrome and Gutenberg content iframe.
+ */
 
-		&:hover {
-			text-decoration: none;
-		}
-	}
+body.block-editor-page {
+  .interface-interface-skeleton__sidebar,
+  .interface-complementary-area__fill,
+  .interface-complementary-area .editor-sidebar,
+  .interface-complementary-area.editor-sidebar {
+    width: 550px !important;
+    min-width: 550px !important;
+    max-width: 550px !important;
+  }
+}
 
-	.is-root-container,
-	.block-editor-block-list__layout,
-	.block-editor-block-list__block,
-	.wp-block,
-	.acf-block-component,
-	.acf-block-body,
-	.acf-block-preview {
-		width: 100% !important;
-		max-width: none !important;
-	}
+.editor-styles-wrapper {
+  --title-size: min(9.8vw, 3.7rem);
+  --font-size: 1.7rem;
+  --font-size-large: calc(var(--font-size) * 1.1);
+  --font-size-small: calc(var(--font-size) * 0.9);
+  --space-xsmall: min(2.5em, 6vw);
+  --space-small: max(1.5rem, 5vh);
+  --space-medium: max(4rem, 6vh);
+  --space-large: max(7rem, 7.5vh);
+  --space-grid: 1em;
+  --space-container: 2.5rem;
+  --space-heading: 2.5rem;
+  --nav-height: 5.2em;
+  --input-pd: 1.1em 1.5em;
+
+  .wp-block-paragraph a {
+    text-decoration: underline;
+  }
 }

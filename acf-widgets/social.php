@@ -1,4 +1,8 @@
-<?php 
+<?php
+if ( custom_acf_is_backend_block_preview() ) {
+	return;
+}
+ 
 function has_valid_url($value) {
 	return !empty($value) && filter_var($value, FILTER_VALIDATE_URL);
 }

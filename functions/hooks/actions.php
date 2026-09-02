@@ -29,7 +29,41 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 // Theme support
 add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'editor-styles' );
 remove_theme_support( 'core-block-patterns' );
+
+/**
+ * The editor chrome gets only its narrowly scoped stylesheet. Gutenberg loads
+ * the same stylesheet in its content iframe via editor settings below; TinyMCE
+ * does not use either hook.
+ */
+function custom_enqueue_block_editor_styles() {
+	$path = get_template_directory() . '/dist/editor.css';
+
+	if ( file_exists( $path ) ) {
+		wp_enqueue_style( 'custom-block-editor', get_template_directory_uri() . '/dist/editor.css', [], filemtime( $path ) );
+	}
+}
+add_action( 'enqueue_block_editor_assets', 'custom_enqueue_block_editor_styles' );
+
+function custom_block_editor_iframe_styles( $settings ) {
+	$path = get_template_directory() . '/dist/editor.css';
+
+	if ( ! file_exists( $path ) ) {
+		return $settings;
+	}
+
+	if ( ! isset( $settings['styles'] ) || ! is_array( $settings['styles'] ) ) {
+		$settings['styles'] = [];
+	}
+
+	$settings['styles'][] = [
+		'css' => '@import url("' . esc_url_raw( get_template_directory_uri() . '/dist/editor.css?ver=' . filemtime( $path ) ) . '");',
+	];
+
+	return $settings;
+}
+add_filter( 'block_editor_settings_all', 'custom_block_editor_iframe_styles', 10, 1 );
 
 add_action( 'init', 'register_my_menus' );
 function register_my_menus() {

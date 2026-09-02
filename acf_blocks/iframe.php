@@ -1,4 +1,8 @@
 <?php
+if ( custom_acf_is_backend_block_preview() ) {
+	return;
+}
+
 $height = get_field('height');
 $color = get_field('background_color');
 ?>

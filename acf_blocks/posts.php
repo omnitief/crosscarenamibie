@@ -1,4 +1,8 @@
 <?php
+if ( custom_acf_is_backend_block_preview() ) {
+	return;
+}
+
 /**
  * Template Name: Nieuwsartikelen
  */

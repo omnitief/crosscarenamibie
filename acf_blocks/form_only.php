@@ -1,4 +1,8 @@
-<?php 
+<?php
+if ( custom_acf_is_backend_block_preview() ) {
+	return;
+}
+ 
 $space = get_spacing_class(get_field('space'));
 $full_id = get_full_id(get_field('id'));
 $form_id = get_field('form_select');
